@@ -1,0 +1,26 @@
+<ion-view view-title="Itens">
+  <ion-nav-buttons side="secondary">
+    <a class="button button-add button-clear icon-left ion-plus" ui-sref="tab.itens.item"></a>
+  </ion-nav-buttons>
+  <ion-content>
+    <div class="bar bar-header item-input-inset">
+      <label class="item-input-wrapper">
+        <i class="icon ion-ios-search placeholder-icon"></i>
+        <input type="search" placeholder="Procurar" ng-model="query">
+      </label>
+      <button class="button button-search">
+        Procurar
+      </button>
+    </div>
+    <ul class="list">
+        <li class="item item-button-right" ng-repeat="item in itens | filter:query">
+          <a ui-sref="tab.itens.item.edit({id: item.$id})">
+            {{item.nome}}
+          </a>
+          <button ng-click="remove(item)" class="button button-assertive button-remove">
+            <i class="icon ion-ios-trash"></i>
+          </button>
+        </li>
+    </ul>
+  </ion-content>
+</ion-view>

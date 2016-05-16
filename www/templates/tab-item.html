@@ -1,0 +1,25 @@
+<ion-view view-title="Item">
+  <ion-content>
+    <form name="myForm" class="list">
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Nome</span>
+        <input type="text" name="nome" ng-model="item.nome" placeholder="Nome" >
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Unidade</span>
+        <input type="text" name="unidade" ng-model="item.unidade" placeholder="Unidade" >
+      </label>
+      <label class="item item-input item-floating-label">
+        <span class="input-label">Preço</span>
+        <input type="text" ui-money-mask name="preco" ng-model="item.preco" placeholder="Preço" >
+      </label>
+  </form>
+
+  <div class="padding">
+    <button class="button button-full button-positive" ng-click="save(item)">
+      SALVAR
+    </button>
+  </div>
+
+  </ion-content>
+</ion-view>
